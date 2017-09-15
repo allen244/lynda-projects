@@ -1,0 +1,165 @@
+https://git-scm.com/download/win
+
+https://help.github.com/articles/ignoring-files/
+https://github.com/github/gitignore
+
+
+git init- creates a project
+git status- tells you the status
+git log- shows the logs
+git add index.html - adds to gi
+git commit -m "message here"
+git add . - adds all the files
+git checkout- checks out the file from staging
+
+unstaging = git reset HEAD text.html - this replaces working with the staging
+
+delete files- git rm "file"
+
+git add --all- push everyhting into staging
+
+ git checkout -b new_branch_name
+ 
+ git branch - list branches
+ 
+ 
+ git branch new_branch_name c28424e
+ 
+ git merge app01- merges from the maser becasue we are in the master
+ 
+ rename branch git branch -m app01 app1
+ remove branch
+ 
+ gitignore- files to get ignored
+ 
+ clone- when you clone you dont see the branches just the master
+git clone https://github.com/planetoftheweb/angulardata.git
+
+git config --system- sytem wide configuration
+git config --global --mean global to user
+git config - project basis
+ git config --list - list all configurations
+ git config --global core.editor "notepad++.exe" - set editor
+ git config --global core.editor "notepad++.exe"
+ cat .gitconfig
+ git help
+ git help log
+ 
+
+
+git log --since=2017-09-12
+git log --until=2017-09-12
+git log --author="Joe"
+git log --grep="Init"
+
+Git three tree architecture
+
+working -> staging -> repository
+
+
+git diff filename
+git diff --staged
+ git diff --color-words contact.html
+ 
+  git commit -a == adds to stage and commits
+  
+  git checkout -- index.html checkout file
+  
+  
+  Undo change from staging
+  $ git reset HEAD resources.html
+Unstaged changes after reset:
+
+
+checkout  aprevious version
+git checkout 3673c43220da -- resources.html
+
+git config --global core.excludesfile ~/.gitignore_global
+
+
+reverting
+git revert 932d75c36c81df
+
+undo many commits- take caution
+git reset
+--soft moves the pointer
+-mixed changes index does not chage working directory
+-hard- changes everything
+
+removing untracked files
+
+git clean -n = test run
+git clean -f = forcing it to clean
+
+global git ignore 
+
+git config --global core.excludesfile ~/.gitignore_global
+
+git commits-
+git log --oneline
+$ git log --oneline -3
+ git log --since="2017-09-12"
+
+  git log --until="2017-09-12"
+  git log --since="2 weeks ago" --until="3 days ago"
+
+ git log --author="al"
+ git log --grep="SIT-1234"
+ git log -p
+ git log --stat --summary
+ git log --graph
+ git log --oneline --graph --all --decorate
+  git show 259dac1
+  
+  branches
+   git branch
+   git branch al
+   $ git checkout al
+Switched to branch 'al'
+$ git checkout master
+Switched to branch 'master'
+
+git checkout -b test
+
+compare branches- git diff master..test
+git diff --color-words master..test
+
+git branch -m al altest
+
+git branch -d deletethis
+
+merge code-
+ git merge test
+ fast forward - just move the comit to the head
+  git mer --no-ff branch
+ git mer --ff-only branch- only fast foward
+
+ git merge --abort
+ 
+ git mergetool --tool=
+ 
+ github repositories
+ git remote
+ git init the directory 
+ git remote add orgin https://github.com/allen244/lynda-projects.git
+ git remote -v
+ git remote rm origin- removes
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
