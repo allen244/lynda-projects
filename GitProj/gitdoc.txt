@@ -141,7 +141,7 @@ merge code-
  github repositories
  git remote
  git init the directory 
- git remote add orgin https://github.com/allen244/lynda-projects.git
+ git remote add origin https://github.com/allen244/lynda-projects.git
  git remote -v
  git remote rm origin- removes
  
@@ -157,6 +157,13 @@ git push origin
   
   git fetch
    git pull https://github.com/allen244/lynda-projects.git
+
+   
+   git remote rename orgin origin
+   
+   delete remote branch- git push origin --delete name
+   
+   git push -u origin
 
 
  
