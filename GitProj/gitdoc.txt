@@ -144,8 +144,11 @@ merge code-
  git remote add orgin https://github.com/allen244/lynda-projects.git
  git remote -v
  git remote rm origin- removes
+ 
+ clone https://github.com/allen244/lynda-projects.git
 
 
+git push origin
  
 
 
