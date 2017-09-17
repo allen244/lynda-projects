@@ -149,6 +149,14 @@ merge code-
 
 
 git push origin
+
+ 
+
+ 
+  git push -f origin master= forec git commit
+  
+  git fetch
+
  
 
 
