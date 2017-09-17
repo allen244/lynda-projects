@@ -156,6 +156,8 @@ git push origin
   git push -f origin master= forec git commit
   
   git fetch
+   git pull https://github.com/allen244/lynda-projects.git
+
 
  
 
