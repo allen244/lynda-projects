@@ -1,0 +1,1 @@
+Java-object oriented, class base, concurrent, platform independent with byecode, own garbage collector
