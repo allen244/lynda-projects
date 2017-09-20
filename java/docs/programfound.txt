@@ -32,7 +32,9 @@ It reduces the amount of coding we need to do. When we use inheritance, we use k
 
 example - bug can have many types of bugs
 is-a relationship- ladybug is a bug
+car is vehicle
 superClass and subClass
+use extends keyword
 
 PolyMorphism- one or object that have  method that does a differnt thing
 
@@ -47,7 +49,20 @@ This problem can be solved using polymorphism. It enables one common interface f
  1. gather requirments
  2.descripe the app
  3. identify main objects
- 4. describe interactions
+ 4. describe interactions- sequences diagram
  5. class diagram
+ 
+ 
+ static- works on the class itself. Class level variable. Example each savings account has the same interest rate across all objects
+ To access the static you use the class Name SavingAccount.getInterstrate();
+ 
+ Abstraction classes-concrete class never instantiated, contains methods that are inherited
+ 
+ interfaces-List of methods that are not implemented. allow multiple inheritance
+ keyword implements must implement those methods
+ 
+ agrgregation - has a relationship a "customer has a address" " classrom has many student"
+ 
+ composition- ownership has  relatiinship but all objects get deleted- documnet has page but if we delete the document it deletes all pages
  
  
