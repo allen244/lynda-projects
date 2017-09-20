@@ -65,4 +65,30 @@ This problem can be solved using polymorphism. It enables one common interface f
  
  composition- ownership has  relatiinship but all objects get deleted- documnet has page but if we delete the document it deletes all pages
  
+ Design Patters- 
+ Creationly patterns- Abstract factory, builder, factory method, prototype, singleton
+ Structural patterns- adapter, bridge, composite, decorator, facade, flyweight, proxy
+ Behavorial patters- chain of responsibility, command, interperter, iterator, mediator, memento, observer, state, strategy, template method, visitor
+ 
+ Singleton-One object of that class instantiated.ONly one instance and only one way to get to it
+ Public class MySingleton(){
+ private static MySingleton single=null;
+ private MySingleton(){};
+ public static MySingleton getInstance(){
+ if(singel==null{
+ single = news MySingleton();
+}
+ 
+ return single;
+ }
+ 
+ MySingleton test = MySingleton.getInstance;
+ 
+ Memento pattern-Handle undo in an object but does not violate encapsulation.
+  
+  Originator- make a change
+  caretaker- when and why to ssave the state or undo state
+  momento object-
+ 
+ 
  
