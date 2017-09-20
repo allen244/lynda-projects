@@ -1,1 +1,68 @@
 Java-object oriented, class base, concurrent, platform independent with byecode, own garbage collector
+
+encapsulation
+
+command line-
+javac Demo.java
+run - java Demo
+
+Data types- characters, boolean
+characters- char letterA= 'a';
+boolean result =true;
+
+
+Primitives- store value directly in memory with variable names
+numbers-
+byte, short,int,long
+fractional
+float and double
+
+Strucuture data- stores the address
+
+Strings- Immutable - Stores as sequence of characters
+
+Array- ab arrey uses one variable name for multiple values
+
+data type[] variable name = new datatype[size];
+-must be declared with a size or initializer list
+-array is accessed through index- always start with 0
+-array out of bounds error
+
+explicit conversion- casting to the data type
+
+call by value- primitives does not change is a copy of the variable
+
+call by refernce- address in memory store the value in that object
+
+overloading- Two or more methods with that same name but differnt paramter types or return type is differnt
+
+chap4.
+Classes are a blueprint for object, state behavior 
+-instance data
+-methods
+-constructors-same name as the class and have no return type. Can method over load
+-classes are resuably and encapsulate data
+
+encapsulation- Encapsulation ensures data integrity and reusability.
+-hide the definition of instance data and methods from the user.
+-Encapsulation can be described as a protective barrier that prevents the code and data from being randomly accessed by other code, defined outside the class.
+
+
+Inheritance- Inheritance is when one class is created from another. Inheritance is also a benefit of object-oriented programming. 
+The new class "inherits" all the instance data and methods from the base class, thus reducing data redundancy.
+
+The benefit of inheritance is that we can define one base class, such as the "bug class," and then extend that to other classes that inherit these characteristics plus more.
+It reduces the amount of coding we need to do. When we use inheritance, we use key words, "extends" and "implements." To sum up, inheritance is when one object acquires the properties from another object.
+
+example - bug can have many types of bugs
+is-a relationship- ladybug is a bug
+
+PolyMorphism- one or object that have  method that does a differnt thing
+
+If we wanted to simulate a grasshopper moving, it would jump. But when a ladybug moves, it flies. The same word move has two implementations. 
+This problem can be solved using polymorphism. It enables one common interface for many implementations and for objects to act differently under different circumstances. So the bug class would have a generic move method defined that crawls.
+ An ant can use the base method because an ant crawls, but each of the inherited classes would redefine this method with their specific types of move methods.
+ 
+ recursion- method taht calls itself
+ Insertion sort-This sort breaks the array into subarrays
+ each interation inserst the next value

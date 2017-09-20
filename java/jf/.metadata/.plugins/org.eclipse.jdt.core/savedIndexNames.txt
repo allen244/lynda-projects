@@ -1,0 +1,19 @@
+INDEX VERSION 1.126+C:\git\repo\lynda-projects\java\jf\.metadata\.plugins\org.eclipse.jdt.core
+3923539333.index
+160895277.index
+883769384.index
+368325300.index
+3661594462.index
+3980479576.index
+487108985.index
+1230384758.index
+3275554859.index
+512076805.index
+1069790233.index
+4267447616.index
+2044433953.index
+3108315530.index
+963932566.index
+709275457.index
+2344553467.index
+2426632008.index
