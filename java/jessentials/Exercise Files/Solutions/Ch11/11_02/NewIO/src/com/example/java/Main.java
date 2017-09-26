@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args) {
 
         Path sourceFile = Paths.get("files", "loremipsum.txt");
-        Path targetFile = Paths.get("files", "target.txt");
+        Path targetFile = Paths.get("files", "targetssss.txt");
 
         try {
             Files.copy(sourceFile, targetFile, StandardCopyOption.REPLACE_EXISTING);

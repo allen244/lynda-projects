@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args) {
 
         File sourceFile = new File("files/loremipsum.txt");
-        File targetFile = new File("files/target.txt");
+        File targetFile = new File("files/targetsss.txt");
 
         try {
             FileUtils.copyFile(sourceFile, targetFile);

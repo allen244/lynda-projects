@@ -1,4 +1,4 @@
-package com.example.java;
+package src.com.example.java.com.example.java;
 
 import com.example.java.utilities.MathHelper;
 

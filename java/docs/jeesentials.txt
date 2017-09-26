@@ -39,3 +39,40 @@ new loop
    for (String color : strings) {
             System.out.println(color);
         }
+		
+HashMap- unordered
+
+ List<String> list = new ArrayList<String>();
+        list.add("California");
+        list.add("Oregon");
+        list.add("Washington");
+     list.forEach(System.out::println);
+
+
+encapsulation- Break application down into smaller pieces. Restrict access to methods an varaibles,Pulic private or protected
+-breaking code down makes it easier to test
+-instance methods setters/getters
+-Packaging complex functionality for ease of programming and hiding complex functionality in methods is called
+
+Nest class -Used in android- only avaialble to that class    class InputHelper {
+        private String getInput(String prompt) {
+            System.out.print(prompt);
+            Scanner sc = new Scanner(System.in);
+            return sc.nextLine();
+        }
+    }
+	
+Constructors- same name as the class, no return type
+
+Final static varaible- only created once
+
+Enums-
+public enum OliveName {
+
+Inheritance-  Inheritance means that there's a relationship between classes in your application that lets you inherit or extend functionality from one class to another
+Parent/child- super class/subclass
+
+polymorphism-
+
+Interface
+ Inheritance means that there's a relationship between classes in your application that lets you inherit or extend functionality from one class to another

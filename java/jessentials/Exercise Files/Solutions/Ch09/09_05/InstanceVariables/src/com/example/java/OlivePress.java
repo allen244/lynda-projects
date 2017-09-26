@@ -9,7 +9,7 @@ public class OlivePress {
     public int getOil(List<Olive> olives) {
 
         for (Olive o : olives) {
-            System.out.println(o.name);
+            System.out.println(o.getName());
         }
 
         return 0;

@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=MathHelper
+comment1.params=s1\ s2
+comment1.target=double\ addValues(java.lang.String,\ java.lang.String)
+comment2.params=s1\ s2
+comment2.target=double\ subtractValues(java.lang.String,\ java.lang.String)
+comment3.params=s1\ s2
+comment3.target=double\ multiplyValues(java.lang.String,\ java.lang.String)
+comment4.params=s1\ s2
+comment4.target=double\ divideValues(java.lang.String,\ java.lang.String)
+numComments=5

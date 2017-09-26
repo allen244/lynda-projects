@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
 
         String sourceFile = "files/loremipsum.txt";
-        String targetFile = "files/target.txt";
+        String targetFile = "files/targetsss.txt";
 
         try (
                 FileReader fReader = new FileReader(sourceFile);
