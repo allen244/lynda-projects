@@ -164,6 +164,9 @@ git push origin
    delete remote branch- git push origin --delete name
    
    git push -u origin
+   
+   git push https://github.com/allen244/lynda-projects.git
+
 
 
  
