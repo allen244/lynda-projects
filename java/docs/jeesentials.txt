@@ -1,0 +1,41 @@
+Primitives- numberr, characters and booleans
+Numbers- byte- 8 bits -127.127
+short - 16
+int -32
+long- 64
+
+double- 32
+float- 64
+
+Helper classes- used to convert one data type to another- Integer, Double, Long. Float
+
+Double obj = new Double(2.45);
+obj.intValue;
+obj.toString()'
+
+Currency
+BigDecimal- Used from calculations- first convert to a string
+BigInteger
+widening the type- when go from int to long
+narrowing type= when go from long to int- losing data
+
+int test =10;
+test++- will equal 10 here
+test= 11 here
+
+++test = 11 here
+test = 11 here
+
+compare string values with the equals() method
+
+instantiation- instance of a  class
+instance variable- member of the instance of the class
+instance method- member of the instance of the class
+
+String - collection of characters or array
+immutable- cant change the value
+
+new loop
+   for (String color : strings) {
+            System.out.println(color);
+        }
