@@ -1,0 +1,63 @@
+Design Patterns- solutions to general problems
+-Help structure my code so that its flexible
+-guide line for how to solve a problem
+-reuse code
+help with changes in the spec down the road
+
+
+
+
+------------------ Strategy pattern ----------------
+Inheritance- "is a"  feline -> cat and tiger
+
+Problems with inheritance-
+
+interfaces- allow differnt classed to share similarities
+-not all classes need the same behavior
+
+Design principle 1- Identify the aspects of your code that vary and separate them from what stays the same
+
+Encapsulate what varies?
+if some aspect of the code keeps chagning- that a sign to pull out the code and sparater it
+
+By separating out the parts of the code - You can extend or alter them without affecting the rest of the code
+
+all patterns let some part of the code vary independenlty of the other parts- few surprised from code changes and increase flexiblity in your code
+
+Design Principle 2- program to an interface, not an implementation
+
+Has a relationship - duck has a fly behavor and quack behavior
+
+-this way we are no longer locked into specific implementations
+
+Using inheritance for the behaviors that done change and composition that are more flexible
+
+Strategy pattern- defines a family of algorithms, encapsulates each one and makes them interchangeable. Strategy lets the algorthm vary independently from clients that use it
+
+Using inheritance for the behaviors that done change and composition that are more flexible
+
+Duck has many behaviors- has a fly behaviro quack. and can use inheritances for regular display so we are using both inheritance and composition "is a" and "has a"
+
+Has a -is composition duck has a quack behaviro
+
+Design principle 3- Favor composition has a over inheritance is a becasue- 
+iheritance you are locked in at compile time
+-compostion - can make use of any behaviro has a- more fleixble
+
+
+
+------------------ Observer pattern ----------------
+The observer pattern -s a one to many dependency between objects so that when one object changes stat all of its depnedents are notified and update automattically.
+example - Publisher ---> many subscribers
+
+Weatehr data is a subject- current condition, forecast, weather stats are the obsevers . They are dependant on the subject "weatehr data" when to update
+
+Can create your own Subject interface or use the java build In observable interface
+
+Loose coupling-Subject and observers are loosley coupled
+-they interact- make coupled
+-but have little know of each other - make them loosely coupled
+-Loose coupling allows for more flexibale design- we dont have to updaet teh subject ever just the observers
+
+Design principle 4- Strive for loosely coupled designs between objects that interact
+
