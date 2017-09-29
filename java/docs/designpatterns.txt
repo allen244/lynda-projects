@@ -61,3 +61,72 @@ Loose coupling-Subject and observers are loosley coupled
 
 Design principle 4- Strive for loosely coupled designs between objects that interact
 
+
+------------------ Decorator pattern ----------------
+Design principle 5- classes should be open for extension but closed for modification
+Open closed principle
+-Decorator patter- attached additinal responsibilties to a object dynamically. Decorators prodive flixble alternative to subclassing for extending functionality
+Abstact class bevberage which gets extended by the decorator component
+Example coffe cost for housblen - mocha- soy all call the cost method to calculate cost
+exammple input strem reading
+	InputStream in = 
+				new LowerCaseInputStream(
+					new BufferedInputStream(
+						new FileInputStream("test.txt")));
+						
+		------------------ Singleton pattern ----------------
+-Ensures a class has only one instance and provides global access to it
+-Need it for connection pools, logging tools, threads, device drivers
+-Private contructor accessed through static method
+Class------- not thread save two threads can access at the same time
+	private Singleton() {}
+ 
+	public static Singleton getInstance() {
+		if (uniqueInstance == null) {
+			uniqueInstance = new Singleton();
+		}
+		return uniqueInstance;
+	}
+Singleton singleton = Singleton.getInstance();
+
+Thread safe expenive synchronized method
+	private static Singleton uniqueInstance;
+
+ 
+	private Singleton() {}
+ 
+	public static synchronized Singleton getInstance() {
+		if (uniqueInstance == null) {
+			uniqueInstance = new Singleton();
+		}
+		return uniqueInstance;
+	}
+static safe	- JVM Creates the one instance before the threads execute.
+two threads cant access at the same time 
+private static Singleton uniqueInstance = new Singleton();
+ 
+	private Singleton() {}
+ 
+	public static Singleton getInstance() {
+		return uniqueInstance;
+	}
+	
+	------------------ State pattern ---------------
+state patter- allows and object alter its behavior when its interanal state changes. The object will apppear to change its class
+-Write code based on states and transitions
+-build a state interface with each actions
+-each state object will implement the interface
+example gumball machines
+
+------------------ Iterator pattern ---------------
+ The pattern gives you a way to access the elements of an aggregate object sequentially without exposing its underlying representation. 
+ Design principal 6- a class should have only one reason to change
+ java iterator
+ 
+ ------------------ Factory pattern ---------------
+ Factory-Pizza factory that can produce many pizzas
+ the factory class is what creates the new object or pizza
+ 
+ factory method patter- defines and interface for creating an object, but lets subclasses decide which class to instantiate.
+ factory method lets a class defer instantiation to subclasses
+

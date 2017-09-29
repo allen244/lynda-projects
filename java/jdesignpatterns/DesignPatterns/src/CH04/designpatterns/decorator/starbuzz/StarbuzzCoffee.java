@@ -12,5 +12,12 @@ public class StarbuzzCoffee {
 		beverage2 = new Mocha(beverage2);
 		System.out.println(beverage2.getDescription() 
 				+ " $" + beverage2.cost());
-	}
+		
+		Beverage decaf = new Decaf();
+		decaf = new Milk(decaf);
+		decaf = new Whip(decaf);
+		
+		System.out.println(decaf.getDescription() 
+				+ " $" + decaf.cost());
+;	}
 }
