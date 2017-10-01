@@ -10,9 +10,11 @@ public class Main {
 		MyThread t2 = new MyThread(2, target);
 		MyThread t3 = new MyThread(3, target);
 		
-		t1.start();
+		
 		t2.start();
 		t3.start();
+		t1.start();
+	
 		
 	}
 

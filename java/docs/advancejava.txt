@@ -104,4 +104,110 @@ LinkedList-order list and add objects at any position in the list
 
 the LinkedList class can help you manage objects in a finer way than the ArrayList.
  It gives you the ability to add objects in specific locations of the collection, and it will retain that order as long as the collection stays in memory.
+ 
+ Bufferstreams - used for putting objects in memory an out
+ buffered classes, you get improved memory management and a more efficient use of system resources.
+ 
+ 	BufferedReader in = new BufferedReader(new FileReader("hamlet.xml"));
+				BufferedWriter out = new BufferedWriter(new FileWriter("newfile.txt"));
+ 
+ 
+ byte input streams- y (
+				FileInputStream in = new FileInputStream("flower.jpg");
+				FileOutputStream out = new FileOutputStream("newflower.jpg");
+
+charactert streams-	FileReader in = new FileReader("textfile.txt");
+				FileWriter out = new FileWriter("newfile.txt");
+ 
+ files- fileinput
+ 
+ scanning file -
+ 	Scanner s = new Scanner(new BufferedReader(new FileReader("tokenizedtext.txt")));
+				) {
+			s.useDelimiter(",");
+			
+The scanner class can be used to easily read this sort of tokenized text, 
+and it works well to read very large files, grab the text from those files already separated, and then process the text as needed in your application.
+
+
+Threads-
+in order to create multiple threads, you can either create your new classes that extend a class called thread, or you can implement an interface.
+create your own custom class that extends thread, add your own functionality to the custom run method, and then instantiate the class and start it from your main process.
+
+public class MyThread extends Thread {
+
+	@Override
+	public void run() {
+		int iterations = 5;
+		
+		try {
+			for (int i = 0; i < iterations; i++) {
+				System.out.println("From secondary thread");
+				sleep(2000);
+			}
+		} catch (InterruptedException e) {
+			System.err.println(e);
+		}
+	}
 	
+}
+Thread implement Runnable interface
+
+public class MyRunnable implements Runnable {
+
+	@Override
+	public void run() {
+		int iterations = 5;
+		
+		try {
+			for (int i = 0; i < iterations; i++) {
+				System.out.println("From runnable");
+				Thread.sleep(1500);
+			}
+		} catch (InterruptedException e) {
+			System.err.println(e);
+		}
+	}
+
+}
+
+to start thread
+	MyRunnable runnable = new MyRunnable();
+		new Thread(runnable).start();
+		
+Interupting a thread-
+	t.interrupt();
+	
+Synchronzing threads-
+
+Now here's an important thing. Notice that I'm creating a single instance of the target object, 
+and I'm passing that same reference into all three thread objects. So when we get into the thread synchronization, \
+they're all examining the same target object to synchronize on, because all three classes are using the same target object, and it's important that they be exactly the same reference, only one of those objects will be able to execute the synchronized code at a time, and because I have the sleep command in there, the other two will have to wait, and they'll go at 2-second intervals.
+
+
+	public class MyThread extends Thread {
+
+	private int threadId;
+	private TargetClass target;
+	
+	public MyThread(int threadId, TargetClass target) {
+		this.threadId = threadId;
+		this.target = target;
+	}
+	
+	@Override
+	public void run() {
+
+		synchronized(target) {
+			try {
+				sleep(2000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			target.call(threadId);
+		}
+		
+
+	}
+
+}
