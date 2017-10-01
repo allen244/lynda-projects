@@ -1,0 +1,9 @@
+IMQAV-
+INGEST- Ingestion is a set of software's engineering techniques to adapt high volumes of data that arrive rapidly, often via streaming.
+KAFA,RABBITMQ, FLUENTD, SCOOP, KINESIS,KAFKA
+,MODEL-Modeling is a set of data architecture techniques to create data storage that is appropriate for a particular domain. 
+Separating domains into relational key value, etc., these are the products that you can find on the web. 
+
+QUERY-Query refers to extracting data from storage, and modifying that data to accommodate anomalies, such as missing data.
+ Analyze -refers to a set of mathematical techniques for statistics, optimization, and machine learning.
+ VISUALIZE

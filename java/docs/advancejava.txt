@@ -185,6 +185,9 @@ and I'm passing that same reference into all three thread objects. So when we ge
 they're all examining the same target object to synchronize on, because all three classes are using the same target object, and it's important that they be exactly the same reference, only one of those objects will be able to execute the synchronized code at a time, and because I have the sleep command in there, the other two will have to wait, and they'll go at 2-second intervals.
 
 
+I've designed the application so that only one can go through the synchronized code at a time and the others have to wait. And in this way 
+I'll prevent problems from creeping into my application that otherwise might occur from trying to share a resource that cannot be shared.
+
 	public class MyThread extends Thread {
 
 	private int threadId;
