@@ -1,0 +1,107 @@
+Static initializer- called the first time anywhere the static is referenced in the application and only called onced
+
+Static initializers are great for initializing the values of complex objects or wherever you need to do any logical operations, 
+including evaluating current state of the application before you assign the one and only value to the static object.
+ 
+
+example
+public class OliveJar {
+
+	public static ArrayList<Olive> olives;
+	
+	static {
+		System.out.println("initializing...");
+		olives = new ArrayList<>();
+		olives.add(new Olive("Kalamata", 0x000000));
+		olives.add(new Olive("Picholine", 0x00FF00));
+		olives.add(new Olive("Kalamata", 0x000000));
+	}
+
+}
+
+non static initializer- will be executed before any constructor methods
+-used when executing a class with multiple constructor methods this is a way to make sure code gets initialized
+
+	{
+		System.out.println("initializing...");
+		olives = new ArrayList<>();
+		olives.add(new Olive("Golden", 0xDA9100));
+	}
+	
+Member classes-Encapsulation
+
+ the advantage of member classes is that you can define classes that are available only within the containing class.
+In this case, I've made a decision that this class is only relevant and should only be callable from within the OliveJar. Whether you architect your code this way is completely up to you, but Java supports this very strong approach to encapsulation of both data and functionality.
+	
+	
+Local inner classes- only visible within this code block- cannot use static methods or variablses
+
+ you can define these local inner classes, whenever you want to define functionality it's only ever going to be called in this one location,
+ it's a way of creating complex functionality, but keeping it hidden from the rest of the application.
+
+	public void reportOlives() {
+		class JarLid {
+			public void open() {
+				System.out.println("Twist, twist, twist...");
+				System.out.println("Pop!");
+			}
+		}
+		new JarLid().open();
+		
+		for (Olive o : olives) {
+			System.out.println("It's a " + o.oliveName + " olive!!");
+		}
+	}
+	
+annoymous inner class- defined and used once
+
+	public void reportOlives() {
+
+		
+		new Object() {
+			public void open() {
+				System.out.println("Twist, twist, twist...");
+				System.out.println("Pop!");
+			}
+		} .open();
+		
+		for (Olive o : olives) {
+			System.out.println("It's a " + o.oliveName + " olive!!");
+		}
+	}
+
+
+	Enum classes-a special type of class that can be used to contain values that serve as constants. 
+	
+	
+	public enum OliveName {
+	KALAMATA("Kalamata"), LIGURIO("Ligurio"), 
+	PICHOLINE("Picholine"), GOLDEN("Golden");
+	
+	private String nameAsString;
+	
+	private OliveName(String nameAsString) {
+		this.nameAsString = nameAsString;
+	}
+	
+	@Override
+	public String toString() {
+		return this.nameAsString;
+	}
+}
+
+Reflection-
+
+		Class<?> c = o.getClass();
+		
+		System.out.println(c);
+		System.out.println(c.getName());
+		System.out.println(c.getSimpleName());
+HashSet- unorderd set
+treeset- ordered set- must implement comparable interface
+
+LinkedList-order list and add objects at any position in the list
+
+the LinkedList class can help you manage objects in a finer way than the ArrayList.
+ It gives you the ability to add objects in specific locations of the collection, and it will retain that order as long as the collection stays in memory.
+	

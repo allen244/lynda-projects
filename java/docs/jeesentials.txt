@@ -76,3 +76,9 @@ polymorphism-
 
 Interface
  Inheritance means that there's a relationship between classes in your application that lets you inherit or extend functionality from one class to another
+ 
+ 
+ An abstract class is abstract because you add the abstract keyword and then it can contain a mixture of fully implemented methods and abstract methods. 
+ An abstract method is just like a method in an interface. It doesn't have an implementation. 
+ It just indicates the method signature and then any subclasses of an abstract method must implement that method.
+ 
