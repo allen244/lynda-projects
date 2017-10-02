@@ -6,8 +6,8 @@ import java.sql.SQLException;
 
 public class Main {
 
-	private static final String USERNAME = "dbuser";
-	private static final String PASSWORD = "dbpassword";
+	private static final String USERNAME = "root";
+	private static final String PASSWORD = "theman244";
 	private static final String CONN_STRING =
 			"jdbc:mysql://localhost/explorecalifornia";
 	

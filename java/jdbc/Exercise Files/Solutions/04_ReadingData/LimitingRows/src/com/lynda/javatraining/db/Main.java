@@ -19,7 +19,7 @@ public class Main {
 						"SELECT tourId, tourName, price FROM tours " +
 						"LIMIT 5, 5");
 				) {
-//			stmt.setMaxRows(5);
+		stmt.setMaxRows(5);
 			Tours.displayData(rs);
 		} catch (SQLException e) {
 			System.err.println(e);

@@ -1,0 +1,223 @@
+Java db connection-
+
+		Connection conn = null;
+		
+		try {
+			conn = DriverManager.getConnection(CONN_STRING, USERNAME, PASSWORD);
+			System.out.println("Connected!");
+		} catch (SQLException e) {
+			System.err.println(e);
+		} finally {
+			if (conn != null) {
+				conn.close();
+			}
+		}
+		
+Statements- to create queires
+	conn = DriverManager.getConnection(CONN_STRING, USERNAME, PASSWORD);
+			stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			rs = stmt.executeQuery("SELECT * FROM states");
+			
+			rs.last();
+			System.out.println("Number of rows: " + rs.getRow());
+			
+Close resourece java 7 above- try with resources
+	try (
+				Connection conn = DBUtil.getConnection(DBType.HSQLDB);
+				Statement stmt = conn.createStatement(
+						ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+				ResultSet rs = stmt.executeQuery("SELECT stateId, stateName FROM states");	
+				) {
+
+			rs.last();
+			System.out.println("Number of rows: " + rs.getRow());
+
+		} catch (SQLException e) {
+			DBUtil.processException(e);
+		} 
+
+Loop through resultset-
+	while (rs.next()) {
+			StringBuffer buffer = new StringBuffer();
+			
+			buffer.append("Tour " + rs.getInt("tourId") + ": ");
+			buffer.append(rs.getString("tourName"));
+			
+			double price = rs.getDouble("price");
+			NumberFormat nf = NumberFormat.getCurrencyInstance();
+			String formattedPrice = nf.format(price);
+			buffer.append(" (" + formattedPrice +")");
+			
+			System.out.println(buffer.toString());
+			
+		}
+		
+a scrollable ResultSet gives you the ability to move back and forth in the result set as needed. 
+Need specify in the statement
+	Statement stmt = conn.createStatement(
+						ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+MYSQL you dont have to do this
+
+Limiting rows in resultset-
+This does not save memory it will query all the rows then limit it. beter to do it in the query itself
+	stmt.setMaxRows(5);
+
+PreparedStatement. The PreparedStatement class lets you set up an SQL statement as a string with these placeholders and then fill them in with variable values.
+private static final String SQL = 
+			"SELECT tourId, tourName, price FROM tours WHERE price <= ?";
+			
+		PreparedStatement stmt = conn.prepareStatement(
+						SQL,
+						ResultSet.TYPE_SCROLL_INSENSITIVE, 
+						ResultSet.CONCUR_READ_ONLY);
+				) {
+			stmt.setDouble(1, maxPrice);
+			rs = stmt.executeQuery();
+			
+Stored proecedures-Callable
+
+
+private static final String SQL = "{call GetToursByPrice(?)}";
+
+	Connection conn = DBUtil.getConnection(DBType.MYSQL);
+				CallableStatement stmt = conn.prepareCall(
+						SQL,
+						ResultSet.TYPE_SCROLL_INSENSITIVE, 
+						ResultSet.CONCUR_READ_ONLY);
+				) {
+			stmt.setDouble(1, maxPrice);
+			rs = stmt.executeQuery();
+
+Many Database Management Systems let you create stored procedures that return more than one value, for example, 
+in MySQL. You can create a stored procedure that returns both a result set and one or more of what are called Out Parameters. 
+
+NEEED to register the out parameter
+
+private static final String SQL = "{call GetToursWithCountByPrice(?, ?)}";
+
+		Connection conn = DBUtil.getConnection(DBType.MYSQL);
+				CallableStatement stmt = conn.prepareCall(
+						SQL,
+						ResultSet.TYPE_SCROLL_INSENSITIVE, 
+						ResultSet.CONCUR_READ_ONLY);
+				) {
+			stmt.setDouble(1, maxPrice);
+			stmt.registerOutParameter("total", Types.INTEGER);
+			rs = stmt.executeQuery();
+			
+			
+java 7 generica getters compared to old way
+			int tourId 		= rs.getObject("tourId", Integer.class);
+			String tourName = rs.getObject("tourName", String.class);
+			BigDecimal price 	= rs.getObject("price", BigDecimal.class);
+
+//			int tourId 		= rs.getInt("tourId");
+//			String tourName = rs.getString("tourName");
+//			double price 	= rs.getDouble("price");
+
+Insert
+	public static boolean insert(Admin bean) throws Exception {
+
+		String sql = "INSERT into admin (userName, password) " +
+				"VALUES (?, ?)";
+		ResultSet keys = null;
+		try (
+				Connection conn = DBUtil.getConnection(DBType.MYSQL);
+				PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+				) {
+			
+			stmt.setString(1, bean.getUserName());
+			stmt.setString(2, bean.getPassword());
+			int affected = stmt.executeUpdate();
+			
+			if (affected == 1) {
+				keys = stmt.getGeneratedKeys();
+				keys.next();
+				int newKey = keys.getInt(1);
+				bean.setAdminId(newKey);
+			} else {
+				System.err.println("No rows affected");
+				return false;
+			}
+			
+		} catch (SQLException e) {
+			System.err.println(e);
+			return false;
+		} finally{
+			if (keys != null) keys.close();
+		}
+		return true;
+	}
+	
+	update
+	
+		public static boolean update(Admin bean) throws Exception {
+
+		String sql =
+				"UPDATE admin SET " +
+				"userName = ?, password = ? " +
+				"WHERE adminId = ?";
+		try (
+				Connection conn = DBUtil.getConnection(DBType.MYSQL);
+				PreparedStatement stmt = conn.prepareStatement(sql);
+				){
+			
+			stmt.setString(1, bean.getUserName());
+			stmt.setString(2, bean.getPassword());
+			stmt.setInt(3, bean.getAdminId());
+			
+			int affected = stmt.executeUpdate();
+			if (affected == 1) {
+				return true;
+			} else {
+				return false;
+			}
+			
+		}
+		catch(SQLException e) {
+			System.err.println(e);
+			return false;
+		}
+
+	}
+	
+		public static boolean delete(int adminId) throws Exception {
+
+		String sql = "DELETE FROM admin WHERE adminId = ?";
+		try (
+				Connection conn = DBUtil.getConnection(DBType.MYSQL);
+				PreparedStatement stmt = conn.prepareStatement(sql);
+				){
+			
+			stmt.setInt(1, adminId);
+			int affected = stmt.executeUpdate();
+			
+			if (affected == 1) {
+				return true;
+			} else {
+				return false;
+			}
+			
+		}
+		catch(SQLException e) {
+			System.err.println(e);
+			return false;
+		}
+
+	}
+	
+	rollback
+		String password = InputHelper.getInput("Enter new password: ");
+		bean.setPassword(password);
+		
+		Connection conn = ConnectionManager.getInstance().getConnection();
+		conn.setAutoCommit(false);
+		
+		if (AdminManager.update(bean)) {
+			System.out.println("Success!");
+		} else
+		{
+			System.err.println("whoops!");
+		}
+		
+		conn.rollback();
