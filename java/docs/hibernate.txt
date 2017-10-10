@@ -1,0 +1,35 @@
+Hibernate-Object relation mapping tool ORM- open source
+-is a framework that simplifies db access
+-data is represented as simple java objects pojo
+-Pojo are accessed through a session manager
+-Increases productivitiy when data persistency is needed
+-Makes persistent database acccess easier
+
+Java application --> Hibernate ---> -->> JTA JDBC JNDI --> DBMS
+
+-Hibernate database access is done thru mapping and configuration
+-hides the details of the database schema
+-provides more time to concentrate on the business logic
+-Includes data query and retrieval operations
+-query results are objects instead of sql results sets
+-persistency is achived by mapping objects to tables
+
+Hibernate advantages-
+-Handles mapping objects to tables using xml or annotations
+-Simplate api for storing an retriving data
+-db changes only require changes to teh xml
+-manages complex table associations
+-Reduces db access with smart fetching strategies
+
+Hibernate plugin install in eclipse- hibernate - http://download.jboss.org/jbosstools/updates/stable/mars
+need to get the drives an add it to eclipse mysql-connector-java-5.1.44-bin
+
+hibernate.cfg.xml- configuration file which connects evrything
+
+Reverse engineering-
+Hibrernate uses a colleciton of rules for mapping- object to tables
+-type mapping and table filtering-
+<schema-selection? tag is used to identify the schema
+<table-filter> tag identifies tables to reverse engineer
+<type-mapping> section is used to convert types
+<table> defines how table reverse engineer
