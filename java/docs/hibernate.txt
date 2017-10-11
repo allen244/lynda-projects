@@ -33,3 +33,88 @@ Hibrernate uses a colleciton of rules for mapping- object to tables
 <table-filter> tag identifies tables to reverse engineer
 <type-mapping> section is used to convert types
 <table> defines how table reverse engineer
+
+hbm configuration file -->java bean mapping file
+
+https://www.boraji.com/hibernate-5-basic-configuration-example
+Java- HibernatUtil get configuration
+      Configuration conf = new Configuration().configure();
+            registry = new StandardServiceRegistryBuilder().applySettings(
+            conf.getProperties()).build();
+           // conf.addAnnotatedClass(Message.class);
+            
+            registry = new StandardServiceRegistryBuilder()
+                    .configure()
+                    .build();
+
+                // Create MetadataSources
+                MetadataSources sources = new MetadataSources(registry);
+
+                // Create Metadata
+                Metadata metadata = sources.getMetadataBuilder().build();
+
+                // Create SessionFactory
+                factory = metadata.getSessionFactoryBuilder().build();
+				
+Data Persistence in hibernate-
+-Hibernate works with java object model
+-Required objects are marked as persistent
+-Only objects with instance variables can be stored
+
+Three states of persistence-
+1.transient state- objects exist in memory
+-must ask the sesions to save it
+2. persistent state- once its saved it becomes persistent
+-the objects exist in the database
+3.Detached state-
+-Objects that exist in the db but hibernate lost connection
+-persistent object whose session has been closed
+-can be reattached to hibernate sessions 
+
+Sessions- used to establish a connection to the db
+-only open a connection when needed and close when done
+-Each applicaton should have on Sessionfactory instance
+-Configuration object is used to create a SessionFactory
+-trhead safe object
+-usually created on startup
+-Mulitope dbs would require multiple SessionFactory objects
+
+Session object- used to get a connection with the db
+lightweight must be created an then destroyed an are not thread safe
+-Session objet wraps jdbc resouces makig it easier to connect , save,persiste get create read, delete opensesion
+
+Transaction object- unit of work
+-lockes the transaction or objects
+-can be started committed or rolled back
+-handles by transaction manager
+
+Mapping Strategies-
+-entities and classes refer to tables in db
+-instance of a class refers to a row in the table
+-attributes and props of class refter to columns of the table
+-class java bean /pogo programming model
+-Hibernate uses configuration file from mapping data
+-Relationship are inclded in mapping file
+-acts as a translator of java and jdbc and reduces amount of sql code
+TWO  Ways to idenfity mapping in hibernate
+-xml files
+-annotations
+all mapping files must be saved as classname.hbm.xml
+
+    <set name="phones" cascade="all">
+         <key column="employee_id"/>
+         <one-to-many class="hibernateexample.Phone"/>
+      </set>
+	     HashSet hs = new HashSet();
+        hs.add(new Phone(cell));
+        hs.add(new Phone(hPhone));
+		
+HQL-understands native sql
+-aleternative to sql
+-Obect oriented version of sql
+-adds a layer of abstraction- the program does not need to change if the db changes
+-works with persistent objects and properties
+-queries are translated into sql
+-helps avoid portability hassles
+Criteeria object- sort, Restrictions etc
+
