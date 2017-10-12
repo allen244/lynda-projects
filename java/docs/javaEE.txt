@@ -1,0 +1,2 @@
+JavaEE- set of apis- ejb,jsp, javamail, jax-ws,annotations, java mail, Servlets etc..
+www.jcp.org- jsr - java specification requests
