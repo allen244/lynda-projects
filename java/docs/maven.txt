@@ -1,0 +1,38 @@
+Maven-Apache Maven, is a software project management, and comprehension tool, based on the concept of a project object model, or POM. 
+Maven can manage a project's build, reporting, and documentation from a central piece of information. 
+POM.xml files simplifies with all the dependencies
+
+POM-This model has a a set of standards, a project lifecycle, a dependency management system,
+ and logic for executing plugin goals at certain phases in the lifecycle process. 
+-Project are set up wtih defaul behaviors
+-source is in a specific directory src/main
+-test cases are in a specifally name folder
+-target folder is used for final jar files
+
+required pom.xml
+groupid
+artifactid
+version
+
+-Dependency management
+-remote repositories
+-reuse build logic-portability and integration
+-easy searching artifacts
+
+Maven Life cycle-
+-Generate project - pom and src code
+-execute maven
+-install a maven artifact
+-run app
+
+Valdiate--> compile--> test--package-->integration test--verifiy--install package--deploy
+
+Maven repositories
+-central respository
+-maven creates a local repository .m2-  C:\Users\alsma\.m2
+
+Command line standard project C:\projects\maven>mvn archetype:generate -DgroupId=com.lynda -DartifactId=sample -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+mvn install- created the jar and adds it to m2 direcoty
+
+to run the project C:\projects\maven\sample>java -cp target/sample-1.0-SNAPSHOT.jar com.lynda.App

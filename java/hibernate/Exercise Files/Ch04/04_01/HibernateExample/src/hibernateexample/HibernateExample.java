@@ -60,10 +60,10 @@ public class HibernateExample {
       }
 
       /* Update employee's records */
-      //HE.updateEmployee(65, 95000);
+      HE.updateEmployee(4, 95000);
 
       /* Delete an employee from the database */
-     // HE.deleteEmployee(67);
+     HE.deleteEmployee(4);
 
       HE.listEmployees(); 
       

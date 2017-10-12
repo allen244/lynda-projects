@@ -15,3 +15,10 @@ employee_id INT,
 primary key(id),
 foreign key(employee_id) references employee(id)
 )
+
+
+12045-
+3,641
+
+
+1965+4045.50+402+3562.27

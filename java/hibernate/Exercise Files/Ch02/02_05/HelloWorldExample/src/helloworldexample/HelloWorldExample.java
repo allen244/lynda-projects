@@ -12,6 +12,8 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.boot.Metadata;
+import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
@@ -35,18 +37,36 @@ public class HelloWorldExample {
             Configuration conf = new Configuration().configure();
             registry = new StandardServiceRegistryBuilder().applySettings(
             conf.getProperties()).build();
-            factory = conf.buildSessionFactory(registry);
+           // conf.addAnnotatedClass(Message.class);
+            
+            registry = new StandardServiceRegistryBuilder()
+                    .configure()
+                    .build();
+
+                // Create MetadataSources
+                MetadataSources sources = new MetadataSources(registry);
+
+                // Create Metadata
+                Metadata metadata = sources.getMetadataBuilder().build();
+
+                // Create SessionFactory
+                factory = metadata.getSessionFactoryBuilder().build();
+            
+            
+            
+            
+            //factory = conf.buildSessionFactory(registry);
         } catch (Throwable ex){
             System.err.println("Failed to create session factory object"+ex);
             throw new ExceptionInInitializerError(ex);
         }
         Session session = factory.openSession();
         Transaction tx = null;
-        Short msgId = null;
+        Integer msgId = null;
         try{
             tx=session.beginTransaction();
             Message msg = new Message(m);
-            msgId = (Short) session.save(msg);
+            msgId = (Integer) session.save(msg);
             List messages = session.createQuery("FROM Message").list();
             for(Iterator iterator = messages.iterator(); iterator.hasNext();){
                 Message message = (Message)iterator.next();
