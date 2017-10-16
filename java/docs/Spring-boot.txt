@@ -50,3 +50,52 @@ Acuator plugin- Use security and dont expose to the outside world
 http://localhost:8080/env- shows the enivorment of the application
 http://localhost:8080/beans- shows all the beans loaded
 applications.properties- can ovverided any of the defaults
+
+This prop is used spring.jpa.hibernate.ddl-auto=none - to tell the default not to generate a schema
+
+Spring Data-
+-Provides a common set of interfaces for a varitey of datasources and no sql
+-naming method
+-repository and data mapping abstractions
+-reduces boilerplate code
+-provides ability to swap out datasoucres much easier
+-allows to focus on business logic and not data access code
+
+Kye components-
+Repository- interface that goes to repository data pattern- CrudRepository and PagingAndSortRepository
+entity- object that represents the table or document
+
+Buildong of a service abstraction
+-Yields cleaner code with separation concerns
+-Allows you to expose data in more than one way
+-In RDBMS scenarios allows to build complex transactions
+
+Spring mvc
+Model -data being served out
+view- visual what the user sees
+controller- traffic cop that collects data for the model an passes it to the view
+@controller
+-responses to all requests throuhg RequestMapping- DispatcherServlet
+-Controls building the model and resolving the view
+
+Restful endpoints
+RestController-
+-Provides RequestMapping interface to dispatcher
+-Controls url to method mapping
+-Provies model to view mapping
+
+Difference with controllers
+-Responsse body
+-returns an object instead of string that is xml or json
+-With Spring HATEOAS can provide hypermedia representations using hal
+
+
+1. Spring startup
+2. Spring data
+3. Sproing service
+4. mvc
+5. rest
+
+
+
+
