@@ -1,0 +1,52 @@
+http://start.spring.io/
+
+Spring Fraemwork-
+-Framework to provide comprehensive infrastructural support for developing enterprise applications
+-Provides the plumbing and we build the business logic
+-removes all boiler plate code
+
+Spring also promotes good object-oriented practices, as well as do-not-repeat-yourself (DRY) principles because they're really baked into the framework. 
+Well-defined interface definitions, leveraging dependency injection, and the concepts of true POJOs, are really part of that object-oriented programming practice.
+
+POjo (plain java object)- has both attributes and behaviors. Doesnt have to be just getters and setters
+
+JavaBean- A simple POJO whose only behavior is getters and setters
+
+DTO - Is javaBneah whose purpose is transport data from layer to another
+
+Boiler plate code removal examples-
+The amount of code that Spring saves us by its inversion of control container is immense. 
+Data access is actually one of the areas that I think you will see the largest removal of boilerplate code, especially when we're dealing with transaction boundaries, rollback segments and connection management.
+ We also can find removal of these boilerplate sections when dealing with security, messaging, remote access, caching, and many other J2EE integrations.
+ -Controller integration throuhg the mvn pattern.
+ 
+ Aspecting-
+ Now aspecting adds common behavior to a class at runtime or compile time. 
+ And this is really what Spring leverages in order to remove all of that boilerplate function. 
+ Spring utilizes aspecting for almost all of its abstractions and actually since 4.0, any class whether you write it or whether Spring wrote it in the framework, that are managed by the ApplicationContext are proxied or aspected in some way.
+ 
+ApplicationContext- 
+ApplicationContext really is the heart and soul of a Spring application. At its core, it is a BeanFactory that stores all of the objects that Spring manages, all of those definitions and the proxies around them. It then uses a factory pattern to serve those beans through the inversion of control operations to your objects themselves.
+ And as I said, it's the heart and soul because it contains every piece of information, every object definition, every instance of what it manages during the life cycle of a Spring application.
+ 
+ Spring BOOT-
+-rapid application development
+-removes boilerplate code of just gettign and app to run
+-cloud native ready but runs in traditional enviorment
+-Spring boot produces and executale jar that contaions all of the dependencies needed for an application
+
+-Embedded tocmat app server
+-auto-config and component scanning in an appropriates application context
+-automatic servlet mappings- And with Spring the servlet that we are specifically going to be dealing with is the dispatcher servlet that will handle all URL requests to our root context.
+-embedded databases and dml-ddl
+-hibernate
+-controller mappings
+-annotations
+
+Skelton for spring boot projects can be built here - http://start.spring.io/
+
+Acuator plugin- Use security and dont expose to the outside world
+
+http://localhost:8080/env- shows the enivorment of the application
+http://localhost:8080/beans- shows all the beans loaded
+applications.properties- can ovverided any of the defaults
