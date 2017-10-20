@@ -1,0 +1,5 @@
+package com.avs.data.entity;
+
+public class Room {
+
+}

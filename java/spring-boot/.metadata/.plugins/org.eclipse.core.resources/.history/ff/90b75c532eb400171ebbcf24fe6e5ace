@@ -1,0 +1,12 @@
+package com.avs.data.repository;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.avs.data.entity.Room;
+
+@Repository
+public interface RoomRepository extends CrudRepository<Room, Long> {
+	
+	public 
+
+}

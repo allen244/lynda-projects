@@ -1,0 +1,5 @@
+package com.avs.data.repository;
+
+public interface RoomRepository {
+
+}

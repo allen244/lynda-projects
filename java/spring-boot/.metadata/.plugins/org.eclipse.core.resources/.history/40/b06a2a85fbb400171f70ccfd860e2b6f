@@ -1,0 +1,14 @@
+package com.avs.reservationsdemo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
+
+@ComponentScan({ "com.avs.web.application", "com.avs.web.service" })
+@SpringBootApplication
+public class ReservationsDemoApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ReservationsDemoApplication.class, args);
+	}
+}

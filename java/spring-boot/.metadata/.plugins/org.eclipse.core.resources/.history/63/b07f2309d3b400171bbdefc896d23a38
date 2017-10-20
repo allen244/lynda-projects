@@ -1,0 +1,5 @@
+package com.avs.business.domain;
+
+public class RoomReservation {
+
+}

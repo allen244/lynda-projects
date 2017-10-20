@@ -1,0 +1,9 @@
+package com.avs.data.entity;
+
+public class Room {
+	
+	public long id;
+	private String name;
+	
+
+}
