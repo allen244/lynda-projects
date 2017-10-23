@@ -1,0 +1,22 @@
+http://projects.spring.io/spring-data/
+
+Spring data is to provide a familiar and consisten, Spring based programming model for data access
+while still retaining the special traits of the data store.
+
+-Convert java business entities to presiste target datastore recorded and the revers
+-look up records
+-update records
+-delete records
+
+Repository pattern-
+The repository pattern is the abstraction used by Spring Data commons to accomplish these goals. 
+It is followed throughout the Spring Data project for creating, reading, updating, and deleting records by citing entities
+
+JPA is a specification, it is not an actual framework. Framework, such as Hibernate and EclipseLink, as well as Java Enterprise Edition compliant application servers provide the implementation. So even if we speak about a Java application that uses JPA, it is actually using another provider following the JPA spec.
+ The spec includes metadata declarations to map Java classes, now called entities, to database tables.
+ 
+ Spring data repository Interfaces
+ Repository
+ CrudRepository- methods delete, save, find
+ 
+ public Interface StudentRepository exteds CrudRepository<Student, String>{}
