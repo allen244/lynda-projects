@@ -1,0 +1,139 @@
+Install- you need jquery,tether and down the library
+<script src="js/jquery.slim.min.js"></script>
+<script src="js/tether.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+fonts- bootstrap uses what best for the browsers
+
+text utils-
+text-justify- lets text of paragraph fit to the right left
+text-nowrap- never wrap
+text-left,center or right
+text-lowercase
+text-uppercase
+text-capitalize
+
+text-sm-right- used for breakpoints
+<h1 class="text-center text-sm-right text-md=left">
+
+Text styles-
+font-weight-bold
+font-weight-normal
+font-italic
+
+Lists and blockqutoes-
+list-unstyled- no bullets
+inline-lists on ul  then list-inline-item on each li- make it one row
+
+Blockquote
+blockquote-reverse- right align
+  <div class="blockquote-footer">Jane</div>  
+  
+Colors- text- white,primary, success,info , warning,danger
+links- primary, success info warning danger mutes
+
+bg-primary,success,info,warning,danger,inverse,faded
+
+Basic Images-
+img-fluid- reponsive images- responds to the view ports
+rounded , round-dir top right bottom left circle rounded-0
+
+img-thumbnail-
+
+float-left float-right
+text-center the image
+mx-auto - center block\
+
+figure
+figure-img
+figure-caption
+
+Bootstrap Grid-
+12 column grid breakpoints- extra small, small, medium, large and extra large
+
+Layout grid containers
+-responsive 12-column
+-Flexbox based
+-structure- containers, rows/columns
+
+2 types of contianers
+Regular containers- which center content and snap to certain grid points.
+fluid containers- which are always the full width of the viewport, which means the width of the device or the browser window. 
+One of the reasons you use a container is because you get a 15 pixel padding on each side to make sure it works well with backgrounds and other elements.
+
+ Now here's the breakpoints that the regular container will adjust to. 
+ First is anything smaller than 576 pixels, and so the bootstrap grid adjusts to content that is smaller than 576 pixels, and then some of these other breakpoints.
+ 
+ class row and cols
+ 
+ cols- can span - sm 576- md-768-lg-992-xl-1200
+ col-md-6- takes up this content until it reaches the medium break pint plus 6
+ 
+ column offsets
+ offset-bp-col
+ 
+ Vertical aligment- USE IN ROWS
+ align-items-ALN
+ 
+ individual alignment- USE IN COLS
+ align-self-ALN
+ 
+ Horoizontal alignment- use rows
+ neeed the col width
+ justify-content-ALN start,center,end,around,between
+ 
+ Position classes - fixed-top , bottom stick-top
+ 
+ basic display- mimics css
+ d-TYPE block inline inline-block flex options
+ 
+ basic flex container
+ d-bp-inline-flex 
+ 
+ -can add container/item classes
+ 
+ direction classes-
+ flex-bp-dir-reverse row/colums
+ 
+ justify-
+ justify-content-bp-start,end,center,around and between
+ 
+ wrap- flex-bp-wrp-reverse - nowrap or wrap
+ 
+ vertifcal alighment- align-content-bp- start,end center,between,around,stetch
+ 
+ 
+ Element spacing and utils
+ floating elements- float-bp-left right none
+ clearfix
+ 
+ margin/padding- m/p margin/padding(trblxy)-bp-012345 auto
+ 
+ sizing- w/h/mw/mh-25,50,75,100
+ 
+ visiblity- invisible toggler visibility on/off
+ 
+ hidden-bp-up/down
+ 
+ align self- align-self-bp-start/end/center/baseline/stretch
+ 
+ Navigation components -navs,tabs,pills and navbars
+ navs- with/without UL
+ nav class inside a nav tag and add nav-item - class nav-link
+ 
+ nav-link options- active, disabled
+ 
+ navstyles- nav -pills or tabs
+ nav alignment- justify-content-center end 
+ nav-fill
+ nav-justified
+ flex-column
+ 
+ navbar-toggleable-bp
+ 
+ navbar colors- bg-primary/success/info/warning/danger/inverse/faded
+ navbar-light
+ navbar-inverse
+ navbar-nav options- nav-item- nav-link active disables
+
+ 
