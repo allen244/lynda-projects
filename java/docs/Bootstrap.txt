@@ -135,5 +135,11 @@ One of the reasons you use a container is because you get a 15 pixel padding on 
  navbar-light
  navbar-inverse
  navbar-nav options- nav-item- nav-link active disables
+ 
+SEARCH FORM
+    <form class="form-inline" action="">
+      <input class="form-control" placeholder="Search">
+        <button class="btn btn-info">GO</button>
+      </form>
 
  
