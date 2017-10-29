@@ -1,0 +1,16 @@
+JavaScript is a scripting language that runs in the browser and interacts with the HTML Markup and CSS Rules to change what you see and what you can do.
+
+document.body.innerHTML=("<h2>The date is " + data + "</h2>")
+document.body.innerHTML =("<h2>The date is " + (data.getMonth()+1) +"/" + data.getDate() + "/"  + data.getFullYear() + "</h2>")
+
+   <script src="scripts.js" defer></script>
+   defer- waits for the page to load
+   asyc- loads when needed
+JavaScript is case sensitive
+use camelcase
+
+=== stricte equality =tests the type and the value
+!==
+
+ternary operator- a==b? valuea: valuesb
+condition ? true:false

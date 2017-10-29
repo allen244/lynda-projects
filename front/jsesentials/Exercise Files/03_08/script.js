@@ -5,11 +5,11 @@ console.log("Before: ", pens);
 
 // PROPERTIES:
 // Get a property of an object by name:
-// console.log("Array length: ", pens.length);
+ console.log("Array length: ", pens.length);
 
 // METHODS:
 // Reverse the array:
-// pens.reverse();
+ pens.reverse();
 
 // Remove the first value of the array:
 // pens.shift();
