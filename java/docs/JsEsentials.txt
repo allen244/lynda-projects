@@ -14,3 +14,37 @@ use camelcase
 
 ternary operator- a==b? valuea: valuesb
 condition ? true:false
+
+Dom-
+Window is the top object in the dom
+document nodes-
+document.querySelector(".masthead");- getting the nodes of css selector
+document.querySelectorAll("a"); - getting all a tags in the document
+document.querySelector(".main-title").innerHTML
+document.querySelector(".main-title").outerHTML
+document.querySelector("#showcase").id
+document.querySelector(".masthead").className
+document.querySelector(".masthead").classList
+document.querySelector(".masthead").classList[1]- read only
+document.querySelector(".masthead").classList.add("new-class")
+document.querySelector(".masthead").classList.remove("clear")
+
+const FEATURED = document.querySelector(".featured-image");
+const THEIMAGE = document.querySelector("img");
+
+var altText= THEIMAGE.getAttribute("alt");
+
+var captionElement= document.createElement("figcaption");
+
+var captionText= document.createTextNode(altText);
+
+captionElement.appendChild(captionText);
+
+console.log(captionElement);
+
+FEATURED.appendChild(captionElement);
+
+THEIMAGE.setAttribute("alt", "");
+
+document.querySelector(".cta a").style
+document.querySelector(".cta a").style.color="green"
