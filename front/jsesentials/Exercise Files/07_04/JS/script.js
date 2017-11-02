@@ -10,4 +10,5 @@ function reveal(e) {
     ALERT.classList.toggle("hide");
 }
 
-CTA.onclick = reveal;
+CTA.addEventListener("click", reveal, false);
+CTA.addEventListener("click", function(){console.log("buttonclicked");}, false);

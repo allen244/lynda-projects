@@ -34,6 +34,8 @@ const THEIMAGE = document.querySelector("img");
 
 var altText= THEIMAGE.getAttribute("alt");
 
+https://developer.mozilla.org/en-US/docs/Web/Events
+
 var captionElement= document.createElement("figcaption");
 
 var captionText= document.createTextNode(altText);
