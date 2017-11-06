@@ -6,8 +6,34 @@
     <link rel="stylesheet" href="../style.css" />
     <script type="text/javascript" src="../jquery-3.0.0.js"></script>
     <script type="text/javascript">
-        $(function() {
+        $(function () {
+            $("#evtTarget").hover(highlight, highlight);
+            $("#evtTarget").click(fnClick);
+            $("#evtTarget").dblclick(fnClick2);
+            $(window).resize(fnResize);
+            $("#evtTarget").one(click, function() {
+                $(this).css({
+                    borderWidth: "4px"
+                    , cursor: "pointer"
+                })
+            });
         });
+
+        function fnResize() {
+            $("#evtTarget").html("Browser resize");
+        }
+
+        function fnClick() {
+            $("#evtTarget").html("CLICK");
+        }
+
+        function fnClick2() {
+            $("#evtTarget").html("DOUBLE CLICK");
+        }
+
+        function highlight() {
+            $("#evtTarget").toggleClass("highlighted");
+        }
     </script>
     <style type='text/css'>
         .highlighted {
@@ -19,9 +45,7 @@
 <body>
     <h1>Using Event Helpers</h1>
     <div id="content">
-
-        <p>Some types of events are fairly common, and jQuery provides shorthand helper functions to make your code a little
-            easier to write and read. Some examples:</p>
+        <p>Some types of events are fairly common, and jQuery provides shorthand helper functions to make your code a little easier to write and read. Some examples:</p>
         <ul>
             <li><code>hover()</code>: use this instead of mouseover and mouseleave events</li>
             <li><code>click()</code>: listens for click events</li>

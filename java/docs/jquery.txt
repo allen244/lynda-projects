@@ -77,3 +77,17 @@ innerWidth() and innerHeight(): get or set the inner width/height of an element
 outerWidth() and outerHeight(): get the outer width/height of an element
 offset(): get coordinates of element relative to the document
 position(): get coordinates of element relative to the offset parent
+
+The animate() function provides a way to create smooth animations on the properties of an object.
+
+show(): Reveals the matched elements using an optional animation
+hide(): Hides the matched elements using an optional animation
+toggle(): Toggles the visible state of the matched elements using an optional animation
+
+fadeIn() fades the element in from being invisible
+fadeOut() fades the element out and removes it from layout
+fadeTo() fades the element to a specified opacity
+
+slideUp(): animates the height of the matched elements to 0 (or whatever CSS min-height is set to). When the animation finishes, the display CSS property of the element is set to 'none' to remove the element from the page layout
+slideDown(): animates the height of the matched elements to reveal them
+slideToggle(): toggles the state of the matched elements, either sliding them up or down depending on their current state

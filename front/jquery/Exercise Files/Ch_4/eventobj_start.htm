@@ -7,15 +7,21 @@
     <script type="text/javascript" src="../jquery-3.0.0.js"></script>
     <script type="text/javascript">
         $(function() {
-            $("#Div1").on("click dblclick", { name: "Div 1" }, function(evt) {
+            $("#Div1").on("click dblclick", {
+                name: "Div 1"
+            }, function(evt) {
                 updateEventDetails(evt);
                 evt.stopPropagation();
             });
-            $("#Div2").on("click dblclick", { name: "Div 2" }, function(evt) {
+            $("#Div2").on("click dblclick", {
+                name: "Div 2"
+            }, function(evt) {
                 updateEventDetails(evt);
                 evt.stopPropagation();
             });
-            $("#Div3").on("click dblclick", { name: "Div 3" }, function(evt) {
+            $("#Div3").on("click dblclick", {
+                name: "Div 3"
+            }, function(evt) {
                 updateEventDetails(evt);
                 evt.stopPropagation();
             });
@@ -31,11 +37,25 @@
                 updateEventDetails(evt);
                 evt.stopPropagation();
             });
-            
+
             $("#input1").keypress(updateEventDetails);
         });
 
         function updateEventDetails(evt) {
+            $(".detailLine span[id]").text("");
+
+            $("#evtType").text(evt.type);
+            $("#evtWhich").text(evt.which);
+            $("#evtTarget").text(evt.target.id);
+            if (evt.relatedTarget)
+                $("#evtRelated").text(evt.relatedTarget.tagName + "#" + evt.relatedTarget.id);
+            $("#evtPageX").text(evt.pageX);
+            $("#evtPageY").text(evt.pageY);
+            $("#evtClientX").text(evt.clientX);
+            $("#evtClientY").text(evt.clientY);
+            $("#evtMetaKey").text(evt.metaKey);
+            if (evt.data)
+                $("#evtData").text(evt.data.name);
         }
     </script>
 </head>
