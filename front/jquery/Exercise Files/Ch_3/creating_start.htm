@@ -19,12 +19,17 @@
         });
 
         function createContent() {
+			$("#example").html("<p>Hi There</p>");
+		
         }
 
         function changeContent() {
+				var newItem = $("<p>New Parage</p>");
+			$("#example").html(newItem);
         }
 
         function changeAllTheContent() {
+			$("#example p").text("Changed all");
         }
     </script>
 </head>

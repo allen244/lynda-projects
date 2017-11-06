@@ -1,0 +1,79 @@
+JQuery- free opensource js libray
+simplifies common web development tasks, ajax, content manipulation, animations
+-works across browsers
+-alot of plugins
+
+Add jquery to the site
+    <script type="text/javascript" src="../jquery-3.0.0.js"></script>
+
+    <!-- insert the script to display the Hello World message here -->
+    <script type="text/javascript">
+        // Inserting content using jQuery
+        $("document").ready(function() {
+            $("#content").append("<p>The page just loaded.</p>");
+        });
+		
+		
+Docuement.ready -Code included inside $( document ).ready() will only run once the page Document Object Model (DOM) is ready for JavaScript code to execute
+
+Selectors and filters-Selectors and Filters provide a way of finding and extracting information from Web pages
+
+Selectors are used to select parts of the Web page using a common CSS-style syntax.
+
+For example, $("p") will select all of the paragraph tags in a document and return them as a list that can be further operated upon
+
+
+
+Filters are used to further refine the results returned from selectors.
+
+For example, $("p:first") will select the first paragraph in the returned set from $("p").
+
+dot means selecting class- .selectors
+#means selecting id=#selectors
+
+
+Selectors-
+$("tag"): Select all of the <tag> elements
+$(".className"): Select all elements that have the className class applied
+$("#identifier"): Select the element with the id of identifier
+$("tag.className"): Select all <tag> elements that have the className class applied
+
+Filters-
+:first and :last
+:even or :odd
+:gt(), :lt(), :eq()
+:animated
+:not(expr)
+
+html(str): can be used to retrieve or set the HTML content of an element
+text(str): used to retrieve or set the text content of an element
+
+append(): Appends content to the inside of the matched elements
+prepend(): Prepends content to the inside of the matched elements
+
+
+wrap(): wrap the matched elements with the specified content
+wrapAll(): wrap content around the matched elements as a group
+unWrap(): remove the parents from the matched elements
+empty(): remove all the child elements from the matched elements
+remove(): removes elements from the page, including any embedded data and event handlers
+detach(): removes elements from the page, but maintains embedded data and event handlers
+replaceAll(): replaces the matched elements with the specified content
+replaceWith(): replaces matched elements with content or the results of a callback function
+appendTo(): Appends the specified content to the inside of the matched elements
+prependTo(): Prepends the specified content to the inside of the matched elements
+after(): Appends content to the outside of the matched elements
+before(): Prepends content to the outside of the matched elements
+insertAfter(): Takes the specified content and appends it outside of the specified elements
+insertBefore(): Takes the specified content and prepends it outside of the specified elements
+
+attr(): get the value of an attribute
+attr(name, val): set the name attribute to val
+attr({ name: val ... }): set multiple attributes in one call
+removeAttr(name): remove the attribute from the element
+
+width() and height(): get or set the width/height of an element
+innerWidth() and innerHeight(): get or set the inner width/height of an element
+outerWidth() and outerHeight(): get the outer width/height of an element
+offset(): get coordinates of element relative to the document
+position(): get coordinates of element relative to the offset parent
