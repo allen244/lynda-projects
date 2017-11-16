@@ -1,0 +1,60 @@
+ The Angular source code is written in TypeScript. TypeScript is a typed superset of JavaScript that gets transpiled to plain JavaScript. Some of the advantages of using 
+ TypeScript is that you can write ES2015 classes and use Modules. 
+ TypeScript also provides strong typing for things like variables and function signatures. This helps to aid during development time to ensure your JavaScript,
+ which is a dynamic language by nature, is being written and used as intended. It is important to note though that using the strong typing is optional,
+ and it is actually completely possible to just write plain JavaScript in a TypeScript file.
+ 
+ -Simplicity- By being able to write classes and use decorators you end up writing less code that reads cleaner and is easier to follow.
+ 
+ Angular source code
+ 
+ angular- runs on components which is used to run a portion of html and provide functionality to that portions
+ -speficy html tempalte with each component
+ -. Each component gets configured with a selector, which tells Angular what markup element tag to associate the component class logic with.
+ 
+ Directives-
+ Directives provide functionality and can transform the DOM. There are two types of directives: structural and attribute. 
+ Structural directives modify layout by altering elements in the DOM.
+ Attribute directives change the behavior or appearance of an existing DOM element.
+ Since directives do not have a template, they are something you can create with the intent of applying them to an existing element, or in some cases a template element to change that element in some way.
+ 
+ Pipe-
+ A pipe takes end data, like a string or an array, and runs some logic to transform it to a new output. 
+ Angular comes with some common pipes, like date in upper case and lower case. You can also write your own pipes to handle custom scenarios that fit your application needs.
+ Pipes are a great way to change data in a reusable way without having to embed the transform logic within component classes, and without having to modify the data just for display purposes.
+ 
+ Data binding-
+ 
+ dependency injection-
+ Dependency injection, or DI for short, is the concept of inversion of control, or IOC for short, where you architect code in a way that you provide modules with other modules it needs to get some work done instead of having your modules go out and get other modules on their own. 
+ DI allows you to write decoupled code that is easier to unit test and to work with.
+ 
+ Services-
+ 
+ data persistence- store data in memory
+ 
+ Routing-
+ Angular provides a router module out of the box for doing just that. It supports configuring route pass to components, route params, so you can have variables in the URL, 
+ a directive for working with links that do routing, a directive for specifying where in a template the routed component will display, creating child routes, 
+ and routing lifecycle hooks for responding to routing events.
+
+ 
+ Components-
+ app.component.ts- used to configure the component
+ must have  selector and templateUrl and stylesUrls
+ 
+ 
+ Decorators-
+  A decorator is an expression that evaluates to a function that makes it possible to annotate and modify classes at design time.
+  Angular has a bunch of decorators that it provides in the framework. Typescript provides support for decorators through it's transpiler.
+  
+  The syntax for using a decorator is the at symbol, followed by the decorator name, and then a pair of parentheses.
+  What you put in the parentheses depends upon the decorator. An Angular application starts with an Angular module.
+  
+  Bootstrapping-main.ts
+  import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppModule } from './app.module';
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+
+ 
